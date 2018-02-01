@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+declare var jquery: any;
+declare var $: any;
 
 @Component({
   selector: 'app-root',
@@ -7,5 +9,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  
+  ngOnInit() {
+
+    $('button').click(function (e) {
+      $('.btn>button').removeClass('btn-clicked');
+      $(e.currentTarget).toggleClass("btn-clicked");
+    });
+  }
+
 }
