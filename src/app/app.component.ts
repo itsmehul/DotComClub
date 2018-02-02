@@ -8,13 +8,22 @@ declare var $: any;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'app';
   ngOnInit() {
 
-    $('button').click(function (e) {
-      $('.btn>button').removeClass('btn-clicked');
-      $(e.currentTarget).toggleClass("btn-clicked");
+    $(document).ready(function () {
+      $('#nav-icon2').click(function () {
+        $(this).toggleClass('open');
+        if ($('.sidebar').width() == 0) {
+          $('.sidebar').animate({ 'width': '80vw' }, '100ms', 'swing');
+        }
+        else {
+          $('.sidebar').animate({ 'width': '0vw' }, '100ms', 'swing');
+        }
+
+      });
+
     });
   }
-
 }
