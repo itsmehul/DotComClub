@@ -16,7 +16,15 @@ mat-toolbar-row {
     grid-template-rows: 2fr auto;
     grid-template-areas: "header" "t"
 }
-
+mat-toolbar-multiple-rows {
+    min-height: 64px;
+    box-shadow: 0px 10px 45px #0d1b0088;
+}
+mat-toolbar-row, mat-toolbar-single-row {
+    height: 64px;
+    box-shadow: 0px 10px 45px #0d1b0088;
+    z-index: 4;
+}
 mat-toolbar {
     grid-area: header;
 }
@@ -147,6 +155,7 @@ router-outlet {
         width: 0vw;
         height: 100%;
         background: rgb(0, 82, 0);
+        box-shadow: 8px 25px 50px #0d1b0088;
     }
 }
 
