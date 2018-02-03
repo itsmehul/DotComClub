@@ -1,3 +1,5 @@
-<p>
-  gallery works!
-</p>
+<div class="grid">
+  <div class="photo" *ngFor="let img of imgs | async" cols="2" rowHeight="2:1">
+    <img src="{{img.data.url}}">
+  </div>
+</div>

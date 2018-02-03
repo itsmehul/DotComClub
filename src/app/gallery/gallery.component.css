@@ -1,0 +1,25 @@
+.grid {
+    margin: 2em;
+    padding-top: 2em;
+    display: grid;
+    grid-template-columns: 2.5fr 2.5fr 2.5fr 2.5fr;
+    grid-template-rows: auto;
+    grid-column-gap: 1em;
+    grid-row-gap: 3em;
+}
+.photo {
+    object-fit: cover;
+    justify-self: center;
+    align-self: center;
+}
+.photo img{
+    width: 20vw;
+}
+@media screen and (max-width:683px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    .photo img {
+        width: 80vw;
+    }
+}
