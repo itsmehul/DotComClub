@@ -160,8 +160,9 @@ display: none;
         top: 64px;
         width: 0vw;
         height: 100%;
-        background: rgb(0, 82, 0);
-        box-shadow: 8px 25px 50px #0d1b0088;
+        background: rgba(0, 43, 0, 0.966);
+        box-shadow: 8px 25px 50px #0d1b0085;
+        z-index: 3;
     }
     .smenu {
         display: block;

@@ -1,0 +1,24 @@
+.grid {
+    margin: 2em;
+    padding-top: 2em;
+    display: grid;
+    grid-template-columns: 5fr 5fr;
+    grid-template-rows: auto;
+    grid-column-gap: 1em;
+    grid-row-gap: 3em;
+}
+
+mat-card {
+    width: 40vw;
+    justify-self: center;
+}
+
+@media screen and (max-width:683px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    mat-card {
+        width: 80vw;
+        justify-self: center;
+    }
+}
