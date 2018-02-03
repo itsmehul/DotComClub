@@ -16,15 +16,18 @@ mat-toolbar-row {
     grid-template-rows: 2fr auto;
     grid-template-areas: "header" "t"
 }
+
 mat-toolbar-multiple-rows {
     min-height: 64px;
     box-shadow: 0px 10px 45px #0d1b0088;
 }
+
 mat-toolbar-row, mat-toolbar-single-row {
     height: 64px;
     box-shadow: 0px 10px 45px #0d1b0088;
     z-index: 4;
 }
+
 mat-toolbar {
     grid-area: header;
 }
@@ -35,6 +38,9 @@ router-outlet {
 
 .btn-clicked {
     background: rgb(0, 56, 0);
+}
+.smenu {
+display: none;
 }
 
 @media screen and (max-width:683px) {
@@ -150,13 +156,45 @@ router-outlet {
         top: 20px;
     }
     .sidebar {
-        position: absolute;
+        position: fixed;
         top: 64px;
         width: 0vw;
         height: 100%;
         background: rgb(0, 82, 0);
         box-shadow: 8px 25px 50px #0d1b0088;
     }
+    .smenu {
+        display: block;
+        position: absolute;
+        visibility: hidden;
+        list-style-type: none;
+        width: 100%;
+        height: 100%;
+        padding-top: 10vh;
+    }
+    .smenu li {
+        list-style-type: none;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height: 25px;
+        padding-top: 3vh;
+        padding-bottom: 3vh;
+
+    }
+    .smenu li:hover{
+        background: rgb(0, 56, 0);
+    }
+    .smenu a{
+        color: rgb(226, 226, 226);
+        text-decoration: none;
+        font-size: 20px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    .smenu ul{
+        padding: 0px;
+    }
+
 }
 
 @media (max-width:599px) {

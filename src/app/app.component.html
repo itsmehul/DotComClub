@@ -1,30 +1,50 @@
 <div class="grid">
-  
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
+
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
       <div id="nav-icon2">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
 
-    <div id="title" style="margin-left: 5vw;">dot.com.club</div>
+      <div id="title" style="margin-left: 5vw;font-family:Courier New, Courier, monospace;background: rgb(27, 56, 0);border-radius:4px;color:whitesmoke; padding-left:9px;padding-right:9px;">dot.com.club</div>
 
 
-    <span class="example-spacer"></span>
-<span class="btn">
-      
-      <button mat-button routerLink="/home">Home</button>
-      <button mat-button routerLink="/faculty">Faculty</button>
-      <button mat-button routerLink="/gallery">Gallery</button>
-      <button mat-button routerLink="/events">Events</button>
-      <button mat-button routerLink="/contacts">Contact Us</button>
-</span>
-  </mat-toolbar-row>
-</mat-toolbar>
-<div class="sidebar"></div>
-<router-outlet></router-outlet>
+      <span class="example-spacer"></span>
+      <span class="btn">
+
+        <button mat-button routerLink="/home">Home</button>
+        <button mat-button routerLink="/faculty">Faculty</button>
+        <button mat-button routerLink="/gallery">Gallery</button>
+        <button mat-button routerLink="/events">Events</button>
+        <button mat-button routerLink="/contacts">Contact Us</button>
+      </span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <div class="sidebar">
+    <span class="smenu">
+      <ul>
+        <li>
+          <a routerLink="/home">Home</a>
+        </li>
+        <li>
+          <a routerLink="/faculty">Faculty</a>
+        </li>
+        <li>
+          <a routerLink="/gallery">Gallery</a>
+        </li>
+        <li>
+          <a routerLink="/events">Events</a>
+        </li>
+        <li>
+          <a routerLink="/contacts">Contact us</a>
+        </li>
+      </ul>
+    </span>
+  </div>
+  <router-outlet></router-outlet>
 </div>
