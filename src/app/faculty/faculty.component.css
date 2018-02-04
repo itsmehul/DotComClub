@@ -12,6 +12,13 @@ mat-card {
     width: 40vw;
     justify-self: center;
 }
+.imgdiv{
+    margin-left: -24px;
+    margin-right: -24px;
+    height: 200px;
+    overflow-y: hidden;
+    overflow-x: auto;
+}
 
 @media screen and (max-width:683px) {
     .grid {
