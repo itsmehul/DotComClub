@@ -17,8 +17,15 @@ mat-card {
     margin-right: -24px;
     height: 200px;
     overflow-y: hidden;
-    overflow-x: auto;
+    overflow-x: hidden;
 }
+
+form{
+    grid-column: span 2;
+    background: rgba(0, 0, 0, 0.774);
+    padding: 1em;
+}
+
 
 @media screen and (max-width:683px) {
     .grid {

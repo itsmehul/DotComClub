@@ -13,6 +13,7 @@ import { FacultyComponent } from './faculty/faculty.component';
 import { EventsComponent } from './events/events.component';
 import { HomeComponent } from './home/home.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { FacultyService } from './services/faculty.service';
 
 var fireConfig = {
   apiKey: "AIzaSyCGBvOpw_r-ZdfJMAPEN1EP65hCmf2Zz8M",
@@ -41,7 +42,7 @@ var fireConfig = {
     AngularFireModule.initializeApp(fireConfig),  // Add this
     AngularFirestoreModule,
   ],
-  providers: [],
+  providers: [FacultyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
