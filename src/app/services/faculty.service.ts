@@ -10,6 +10,7 @@ export class FacultyService {
 
   postsCol: AngularFirestoreCollection<Post>;
   posts:any;
+  postDoc: AngularFirestoreDocument<Post>;
 
   constructor(public afs: AngularFirestore) {
     this.postsCol = this.afs.collection('teachers');
@@ -28,7 +29,12 @@ export class FacultyService {
    getPosts(){
      return this.posts;
    }
-   addItem(post: Post){
+   addPost(post: Post){
     this.postsCol.add(post);
+   }
+   deletePost(post:Post){
+    console.log(post.id);
+     this.postDoc=this.afs.doc(`teachers/${post.id}`);
+     this.postDoc.delete();
    }
 }

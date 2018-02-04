@@ -28,11 +28,15 @@ post: Post = {
   }
   onSubmit(){
     if(this.post.name!='' && this.post.teaches!='' && this.post.url!=''){
-      this.facultyService.addItem(this.post);
+      this.facultyService.addPost(this.post);
       this.post.name='';
       this.post.teaches='';
       this.post.url='';
     }
+  }
+  deletePost(event,post){
+    this.facultyService.deletePost(post);
+   
   }
 
 }
