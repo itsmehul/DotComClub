@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from 'angularfire2/auth';
+import * as firebase from 'firebase/app';
 declare var jquery: any;
 declare var $: any;
 
@@ -8,8 +10,18 @@ declare var $: any;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  constructor(public afAuth: AngularFireAuth) {
+  }
 
-  title = 'app';
+  login() {
+    let a=prompt('Enter club code');
+    if(a=='cookie'){
+    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());}
+  }
+  logout() {
+    this.afAuth.auth.signOut();
+  }
+
   ngOnInit() {
 
     $(document).ready(function () {

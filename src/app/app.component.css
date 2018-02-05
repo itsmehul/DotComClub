@@ -43,6 +43,14 @@ router-outlet {
 display: none;
 }
 
+#logout{
+display: flex;
+margin-left: 2em;
+}
+.logout{
+    width: 30vh;
+    display: flex;
+}
 
 @media screen and (max-width:683px) {
     .btn {

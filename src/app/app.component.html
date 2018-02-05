@@ -11,8 +11,15 @@
         <span></span>
       </div>
 
-      <div id="title" style="margin-left: 5vw;font-family:Courier New, Courier, monospace;background: rgb(27, 56, 0);border-radius:4px;color:whitesmoke; padding-left:9px;padding-right:9px;">dot.com.club</div>
 
+      <div class="logout" *ngIf="afAuth.authState | async as user; else showLogin">
+        <h1>Hello {{ user.displayName }}!</h1>
+        <button id="logout" (click)="logout()">Logout</button>
+      </div>
+      <ng-template #showLogin>
+        <div id="title" style="margin-left: 5vw;font-family:Courier New, Courier, monospace;background: rgb(27, 56, 0);border-radius:4px;color:whitesmoke; padding-left:9px;padding-right:9px;"
+          (click)="login()">dot.com.club</div>
+      </ng-template>
 
       <span class="example-spacer"></span>
       <span class="btn">
