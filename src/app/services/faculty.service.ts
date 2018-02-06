@@ -27,6 +27,15 @@ export class FacultyService {
     console.log(this.posts);
    }
    getPosts(){
+    this.posts = this.postsCol.snapshotChanges()
+      .map(actions => {
+        return actions.map(a => {
+          const data = a.payload.doc.data() as Post;
+          const id = a.payload.doc.id;
+          console.log(id);
+          return { id, data };
+        });
+      });
      return this.posts;
    }
    addPost(post: Post){
