@@ -13,31 +13,20 @@ export class FacultyService {
   postDoc: AngularFirestoreDocument<Post>;
 
   constructor(public afs: AngularFirestore) {
-    this.postsCol = this.afs.collection('teachers');
-    console.log(this.postsCol);
-    this.posts = this.postsCol.snapshotChanges()
-      .map(actions => {
-        return actions.map(a => {
-          const data = a.payload.doc.data() as Post;
-          const id = a.payload.doc.id;
-          console.log(id);
-          return { id, data };
-        });
-      });
-    console.log(this.posts);
-   }
+    this.postsCol = this.afs.collection('teachers');}
    getPosts(){
     this.posts = this.postsCol.snapshotChanges()
       .map(actions => {
         return actions.map(a => {
           const data = a.payload.doc.data() as Post;
           const id = a.payload.doc.id;
-          console.log(id);
           return { id, data };
         });
       });
+      console.log(this.posts);
      return this.posts;
    }
+
    addPost(post: Post){
     this.postsCol.add(post);
    }

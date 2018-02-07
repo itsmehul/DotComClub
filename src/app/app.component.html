@@ -22,13 +22,14 @@
       </ng-template>
 
       <span class="example-spacer"></span>
+      
       <span class="btn">
 
-        <button mat-button class="navBgColorToggle" routerLink="/home">Home</button>
-        <button mat-button class="navBgColorToggle" routerLink="/faculty">Faculty</button>
-        <button mat-button class="navBgColorToggle" routerLink="/gallery">Gallery</button>
-        <button mat-button class="navBgColorToggle" routerLink="/events">Events</button>
-        <button mat-button class="navBgColorToggle" routerLink="/contacts">Contact Us</button>
+        <button routerLinkActive="active-link" routerLink="/home">Home</button>
+        <button routerLinkActive="active-link" routerLink="/faculty">Faculty</button>
+        <button routerLinkActive="active-link" routerLink="/gallery">Gallery</button>
+        <button routerLinkActive="active-link" routerLink="/events">Events</button>
+        <button routerLinkActive="active-link" routerLink="/contacts">Contact Us</button>
       </span>
     </mat-toolbar-row>
   </mat-toolbar>

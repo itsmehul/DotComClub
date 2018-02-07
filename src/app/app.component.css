@@ -1,5 +1,49 @@
+
 mat-toolbar-row {
     background: rgb(0, 82, 0);
+}
+button {
+    position: relative;
+    background-color: rgba(0, 107, 4, 0);
+    border: none;
+    font-size: 13px;
+    color: #FFFFFF;
+    padding: 0.5em;
+    width: 100px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+button:after {
+    content: "";
+    background: rgb(1, 128, 1);
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 1.2s;
+    outline:none !important;
+}
+
+button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s;
+    outline:none !important;
+}
+.active-link{
+    background-color: rgb(3, 41, 2);
+    outline:none !important;
 }
 
 .example-icon {
@@ -166,7 +210,7 @@ margin-left: 2em;
     }
     .sidebar {
         position: fixed;
-        top: 64px;
+        top: 0px;
         width: 0vw;
         height: 100%;
         background: rgba(0, 43, 0, 0.966);
@@ -174,6 +218,7 @@ margin-left: 2em;
         z-index: 3;
     }
     .smenu {
+        margin-top: 64px;
         display: block;
         position: absolute;
         visibility: hidden;

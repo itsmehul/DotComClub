@@ -11,7 +11,22 @@
 mat-card {
     width: 40vw;
     justify-self: center;
-}
+    animation-duration: 1s;
+    animation-name: slidein;
+  }
+  
+  @keyframes slidein {
+    from {
+      top: 10vh;
+      opacity: 0.5;
+    }
+  
+    to {
+        top: 0vh;
+        opacity: 1;
+    }
+  }
+  
 .imgdiv{
     margin-left: -24px;
     margin-right: -24px;
@@ -25,13 +40,14 @@ form{
     background: rgba(0, 0, 0, 0.774);
     padding: 1em;
 }
+mat-card-content{
+    margin-top: 1em;
+}
 
 
-@media screen and (max-width:683px) {
-    .grid {
-        grid-template-columns: 1fr;
-    }
+@media screen and (max-width:700px) {
     mat-card {
+        grid-column: span 2;
         width: 80vw;
         justify-self: center;
     }

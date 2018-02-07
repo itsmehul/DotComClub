@@ -36,12 +36,5 @@ post: Post = {
   }
   deletePost(event,post){
     this.facultyService.deletePost(post);
-   
   }
-  check(){
-    this.facultyService.getPosts().subscribe(data=>{
-      this.posts=data;
-    })
-  }
-
 }

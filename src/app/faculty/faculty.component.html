@@ -5,8 +5,6 @@
     <input type="text" placeholder="Image(url)" [(ngModel)]="post.url" name="url">
     <button value="Submit">Add teacher</button>
   </form>
-  <button (click)="check()">check</button>
-
   <mat-card *ngFor="let post of posts">
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>
