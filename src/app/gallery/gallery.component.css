@@ -1,37 +1,55 @@
 .grid {
-    margin: 2em;
-    padding-top: 2em;
+    padding: 3em;
     display: grid;
-    grid-template-columns: 2.5fr 2.5fr 2.5fr 2.5fr;
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
     grid-template-rows: auto;
     grid-column-gap: 1em;
     grid-row-gap: 3em;
 }
+
 .photo {
-    object-fit: cover;
     justify-self: center;
     align-self: center;
+    width: 16vw;
+    height: 50vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
-.photo img{
-    width: 20vw;
+
+.photo img {
+    width: 16vw;
     animation-duration: 1s;
     animation-name: fadein;
-  }
-  
-  @keyframes fadein {
+}
+
+@keyframes fadein {
     from {
-      opacity: 0.5;
+        opacity: 0.5;
     }
-  
     to {
         opacity: 1;
     }
-  }
+}
+
+.photo:hover {
+    overflow: visible;
+}
+
 @media screen and (max-width:683px) {
     .grid {
+        margin-top: 4em !important;
         grid-template-columns: 1fr;
     }
+    .photo {
+        width: 100%;
+        height: 50vh;
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
     .photo img {
-        width: 80vw;
+        width: 100%;
+    }
+    .photo:hover {
+        overflow: visible;
     }
 }
