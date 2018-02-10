@@ -1,7 +1,6 @@
 <div class="grid">
 
-  <mat-toolbar color="primary">
-    <mat-toolbar-row>
+  <div class="navbar">
       <div id="nav-icon2">
         <span></span>
         <span></span>
@@ -12,44 +11,41 @@
       </div>
 
 
-      <div class="logout" *ngIf="afAuth.authState | async as user; else showLogin">
+      <!-- <div class="logout" *ngIf="afAuth.authState | async as user; else showLogin">
         <h1>Hello {{ user.displayName }}!</h1>
         <button id="logout" (click)="logout()">Logout</button>
-      </div>
-      <ng-template #showLogin>
+      </div> -->
+      <!-- <ng-template #showLogin> -->
         <div id="title" style="margin-left: 5vw;font-family:Courier New, Courier, monospace;background: rgb(27, 56, 0);border-radius:4px;color:whitesmoke; padding-left:9px;padding-right:9px;"
           (click)="login()">dot.com.club</div>
-      </ng-template>
+      <!-- </ng-template> -->
 
-      <span class="example-spacer"></span>
-      
+    
       <span class="btn">
-
         <button routerLinkActive="active-link" routerLink="/home">Home</button>
         <button routerLinkActive="active-link" routerLink="/faculty">Faculty</button>
         <button routerLinkActive="active-link" routerLink="/gallery">Gallery</button>
         <button routerLinkActive="active-link" routerLink="/events">Events</button>
         <button routerLinkActive="active-link" routerLink="/contacts">Contact Us</button>
       </span>
-    </mat-toolbar-row>
-  </mat-toolbar>
+    </div>
   <div class="sidebar">
     <span class="smenu">
       <ul>
         <li>
-          <a class="navBgColorToggle" routerLink="/home">Home</a>
+          <a routerLinkActive="active-link" routerLink="/home">Home</a>
         </li>
         <li>
-          <a class="navBgColorToggle" routerLink="/faculty">Faculty</a>
+          <a routerLinkActive="active-link" routerLink="/faculty">Faculty</a>
         </li>
         <li>
-          <a class="navBgColorToggle" routerLink="/gallery">Gallery</a>
+          <a routerLinkActive="active-link" routerLink="/gallery">Gallery</a>
         </li>
         <li>
-          <a class="navBgColorToggle" routerLink="/events">Events</a>
+          <a routerLinkActive="active-link" routerLink="/events">Events</a>
         </li>
         <li>
-          <a routerLink="/contacts">Contact us</a>
+          <a routerLinkActive="active-link">Contact us</a>
         </li>
       </ul>
     </span>
