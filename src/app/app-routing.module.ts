@@ -5,6 +5,8 @@ import { FacultyComponent } from './faculty/faculty.component';
 import { EventsComponent } from './events/events.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { HomeComponent } from './home/home.component';
+import { AdminComponent } from './admin/admin.component';
+import { AuthguardService } from './services/authguard.service';
 
 const routes: Routes = [
   //Add default route
@@ -14,6 +16,7 @@ const routes: Routes = [
   { path: 'faculty', component: FacultyComponent },
   { path: 'events', component: EventsComponent },
   { path: 'contacts', component: ContactusComponent },
+  { path: 'admin', component: AdminComponent,canActivate: [AuthguardService] },
 ];
 
 
