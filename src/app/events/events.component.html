@@ -1,3 +1,20 @@
-<p>
-  events works!
-</p>
+<div class="grid">
+  
+  <mat-accordion *ngFor="let event of events">
+      <mat-expansion-panel (opened)="panelOpenState = true"
+                           (closed)="panelOpenState = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+              {{event.data.name}}
+          </mat-panel-title>
+          <mat-panel-description>
+            {{panelOpenState ? 'close' : 'more info'}}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p></p>
+        <p>{{event.data.date}}</p>
+        <p>{{event.data.place}}</p>
+        <button mat-button (click)="deletePost($e,event)">Delete Item</button>
+      </mat-expansion-panel>
+    </mat-accordion>
+</div>

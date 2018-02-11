@@ -1,0 +1,7 @@
+.grid {
+    margin-top: 6em !important;
+    margin: 2em;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
