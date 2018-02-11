@@ -1,15 +1,16 @@
 .grid {
+    margin-top: 6em !important;
     margin: 2em;
     padding-top: 2em;
     display: grid;
-    grid-template-columns: 5fr 5fr;
+    grid-template-columns: repeat( auto-fit, minmax(250px, 300px) );
     grid-template-rows: auto;
     grid-column-gap: 1em;
     grid-row-gap: 3em;
 }
 
 mat-card {
-    width: 40vw;
+    width: 200px;
     justify-self: center;
     animation-duration: 1s;
     animation-name: slidein;
@@ -46,9 +47,12 @@ mat-card-content{
 
 
 @media screen and (max-width:700px) {
+    .grid{
+        grid-template-columns: 1fr;
+        margin: 0px;
+    }
     mat-card {
-        grid-column: span 2;
-        width: 80vw;
+        width: 200px;
         justify-self: center;
     }
 }
