@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -16,6 +16,10 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { FacultyService } from './services/faculty.service';
 import { GalleryService } from './services/gallery.service';
 import { EventsService } from './services/events.service';
+import { AdminComponent } from './admin/admin.component';
+import { AuthService } from './services/auth.service';
+import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
+import { AuthguardService } from './services/authguard.service';
 
 var fireConfig = {
   apiKey: "AIzaSyCGBvOpw_r-ZdfJMAPEN1EP65hCmf2Zz8M",
@@ -33,7 +37,8 @@ var fireConfig = {
     FacultyComponent,
     EventsComponent,
     HomeComponent,
-    ContactusComponent
+    ContactusComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -42,10 +47,12 @@ var fireConfig = {
     AngularFireAuthModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     AngularFireModule.initializeApp(fireConfig),  // Add this
     AngularFirestoreModule,
+    AngularFireDatabaseModule
   ],
-  providers: [FacultyService, GalleryService, EventsService],
+  providers: [FacultyService, GalleryService, EventsService, AuthService, AuthguardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

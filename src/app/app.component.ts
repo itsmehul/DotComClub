@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from 'angularfire2/auth';
+import {AuthService} from './services/auth.service';
+import {FormControl, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 import * as firebase from 'firebase/app';
 declare var jquery: any;
 declare var $: any;
@@ -10,16 +12,32 @@ declare var $: any;
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  constructor(public afAuth: AngularFireAuth) {
+mail: string;
+pwd: string;
+
+  constructor(public aS: AuthService) {
+  }
+  email = new FormControl('', [Validators.required, Validators.email]);
+
+  getErrorMessage() {
+    return this.email.hasError('required') ? 'You must enter a value' :
+        this.email.hasError('email') ? 'Not a valid email' :
+            '';
   }
 
+
   login() {
-    let a=prompt('Enter club code');
-    if(a=='cookie'){
-    this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());}
+    $('#myModal').css('display', 'block');
   }
-  logout() {
-    this.afAuth.auth.signOut();
+  submit(){
+    this.aS.emailLogin(this.mail,this.pwd);
+    $('#myModal').css('display', 'none');
+  }
+  close() {
+    $('#myModal').css('display', 'none');
+  }
+  logout(){
+    this.aS.signOut();
   }
 
   ngOnInit() {
@@ -43,17 +61,20 @@ export class AppComponent {
         $('.smenu').css('visibility', 'hidden');
       });
 
-      $(window).on('scroll',()=>{
-        if($(this).scrollTop()>100){
-          $('.navbar').css({'background-color':'rgba(0, 82, 0,0.09)','box-shadow':'none'});
-          $('.btn button').css({'background-color':'rgb(0, 82, 0)'});
-        }else{
+      $(window).on('scroll', () => {
+        if ($(this).scrollTop() > 100) {
+          $('.navbar').css({ 'background-color': 'rgba(0, 82, 0,0.09)', 'box-shadow': 'none' });
+          $('.btn button').css({ 'background-color': 'rgb(0, 82, 0)' });
+        } else {
           $('.navbar').css('background-color', 'rgb(0, 82, 0)');
-          $('.btn button').css({'background-color':'rgba(0, 82, 0,0.09)'});
+          $('.btn button').css({ 'background-color': 'rgba(0, 82, 0,0.09)' });
         }
       });
-
-
+      $(window).on('click', (event)=>{
+        if (event.target == $('#myModal')) {
+          $('#myModal').css('display', 'none');
+        }
+      });
     });
   }
 }
