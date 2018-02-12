@@ -12,7 +12,7 @@
           </mat-panel-description>
         </mat-expansion-panel-header>
         <p></p>
-        <p>{{event.data.date}}</p>
+        <p>{{event.data.date | date:"MM/dd/yy"}} </p>
         <p>{{event.data.place}}</p>
         <button mat-button (click)="deletePost($e,event)">Delete Item</button>
       </mat-expansion-panel>

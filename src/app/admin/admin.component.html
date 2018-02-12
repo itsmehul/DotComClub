@@ -1,3 +1,6 @@
-<p style="margin-top: 6em">
-  admin works!
-</p>
+<form (ngSubmit)="onSubmit()">
+  <input type="text" placeholder="Name" [(ngModel)]="post.name" name="name">
+  <input type="text" placeholder="Teaches" [(ngModel)]="post.teaches" name="teaches">
+  <input type="text" placeholder="Image(url)" [(ngModel)]="post.url" name="url">
+  <button value="Submit">Add teacher</button>
+</form>

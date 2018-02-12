@@ -1,0 +1,9 @@
+.grid {
+    padding-top: 6em !important;
+    padding: 3em;
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
+    grid-template-rows: auto;
+    grid-column-gap: 1em;
+    grid-row-gap: 3em;
+}
