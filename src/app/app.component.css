@@ -126,11 +126,12 @@ router-outlet {
 
 #logout {
     display: flex;
+    margin-top: 5px !important;
     margin-left: 2em;
 }
 
 .logout {
-    width: 30vh;
+    width: 200px;
     display: flex;
 }
 
