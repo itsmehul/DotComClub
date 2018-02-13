@@ -1,5 +1,5 @@
 <div class="grid">
-  <mat-card class="tall-panel">
+  <mat-card class="medium-panel">
     <h2>Add teacher</h2>
     <form (ngSubmit)="addPost()">
       <mat-form-field>
@@ -57,8 +57,13 @@
       <button mat-raised-button value="Submit" color="primary">Add</button>
     </form>
   </mat-card>
-  <form action="getFile($event)">
-    <input type="file" name="pic" accept="image/*">
-    <input type="submit">
-  </form>
+  <mat-card>
+      <h2>Add Notice</h2>
+      <form (ngSubmit)="addNotice()">
+        <mat-form-field>
+          <input matInput type="text" placeholder="Name" [(ngModel)]="not.notice" name="name" required>
+        </mat-form-field>
+        <button mat-raised-button value="Submit" color="primary">Add</button>
+      </form>
+    </mat-card>
 </div>

@@ -12,7 +12,7 @@
 
 
       <div class="logout" *ngIf="this.aS.authState as user; else showLogin">
-        <button mat-raised-button id="logout" (click)="logout()">Logout</button>
+        <button mat-raised-button color="warn" id="logout" (click)="logout()">Logout</button>
         <button routerLinkActive="active-link" style="margin-top: 5px !important" routerLink="/admin">Admin</button>
       </div> 
       <ng-template #showLogin>

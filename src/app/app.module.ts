@@ -20,6 +20,7 @@ import { AdminComponent } from './admin/admin.component';
 import { AuthService } from './services/auth.service';
 import { AngularFireDatabaseModule } from 'angularfire2/database-deprecated';
 import { AuthguardService } from './services/authguard.service';
+import { NoticeService } from './services/notice.service';
 
 var fireConfig = {
   apiKey: "AIzaSyCGBvOpw_r-ZdfJMAPEN1EP65hCmf2Zz8M",
@@ -52,7 +53,7 @@ var fireConfig = {
     AngularFirestoreModule,
     AngularFireDatabaseModule
   ],
-  providers: [FacultyService, GalleryService, EventsService, AuthService, AuthguardService],
+  providers: [FacultyService, GalleryService, EventsService, AuthService, AuthguardService, NoticeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

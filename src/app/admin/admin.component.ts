@@ -5,6 +5,8 @@ import {FacultyService} from '../services/faculty.service';
 import {Post} from '../models/faculty';
 import { EventsService } from '../services/events.service';
 import { Event } from '../models/events';
+import {NoticeService} from '../services/notice.service';
+import {Notice} from '../models/notice';
 
 @Component({
   selector: 'app-admin',
@@ -32,11 +34,16 @@ export class AdminComponent implements OnInit {
     date: new Date(),
     place: ''
   }
+  nots: Notice[];
+  not: Notice = {
+    notice: '',
+  }
 
   constructor(
     public facultyService: FacultyService,
     public galleryService: GalleryService,
-    public eventService: EventsService
+    public eventService: EventsService,
+    public noticeService: NoticeService
   ) { }
 
   ngOnInit() {
@@ -65,6 +72,12 @@ export class AdminComponent implements OnInit {
       this.event.place = '';
       this.event.url = '';
       this.event.desc = '';
+    }
+  }
+  addNotice(){
+    if(this.not.notice!=''){
+      this.noticeService.addNotice(this.not);
+      this.not.notice='';
     }
   }
 }

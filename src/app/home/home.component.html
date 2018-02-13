@@ -1,23 +1,7 @@
 <div class="grid">
-  
-    <mat-accordion *ngFor="let evnt of events">
-        <mat-expansion-panel (opened)="panelOpenState = true"
-                             (closed)="panelOpenState = false">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-                {{evnt.data.name}}
-                
-            </mat-panel-title>
-            
-            <mat-panel-description>
-              {{evnt.data.date | date:"MM/dd/yy"}} 
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-          <p></p>
-          
-          <p>{{evnt.data.place}}</p>
-          <p>{{evnt.data.desc}}</p>
-          <button mat-raised-button color="warn" *ngIf="this.aS.authState" mat-button (click)="deleteEvent($event,evnt)" >Delete Item</button>
-        </mat-expansion-panel>
-      </mat-accordion>
-  </div>
+  <mat-card *ngFor="let note of nots">
+    <b><h1>Notice</h1></b>
+    <p>{{note.data.notice}}</p>
+    <button mat-raised-button color="warn" *ngIf="this.aS.authState" mat-button (click)="deleteNotice($event,note)">Delete Item</button>
+  </mat-card>
+</div>
