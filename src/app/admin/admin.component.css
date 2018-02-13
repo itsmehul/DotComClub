@@ -1,9 +1,22 @@
-.grid {
-    padding-top: 6em !important;
-    padding: 3em;
-    display: grid;
-    grid-template-columns: 2fr 2fr 2fr 2fr 2fr;
-    grid-template-rows: auto;
-    grid-column-gap: 1em;
-    grid-row-gap: 3em;
+*, *:before, *:after {
+    box-sizing: border-box;
 }
+
+.grid {
+    margin-top: 6em !important;
+    margin: 0 auto;
+    padding: 2em;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: minmax(70px, auto);
+    grid-gap: 20px;
+    max-width: 940px;
+}
+
+.tall-panel {
+    grid-row-end: span 3;
+}
+.medium-panel{
+    grid-row-end: span 2;
+}
+

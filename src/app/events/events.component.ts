@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EventsService } from '../services/events.service';
+import {AuthService} from '../services/auth.service';
 import { Event } from '../models/events';
 
 @Component({
@@ -11,14 +12,17 @@ export class EventsComponent implements OnInit {
   panelOpenState: boolean = false;
 
   events: Event[];
-  event: Event = {
+  evnt: Event = {
     name: '',
+    desc: '',
+    url: '',
     date: new Date(),
     place: ''
   }
 
 
-  constructor(public eventService: EventsService) {
+  constructor(public eventService: EventsService,
+  public aS: AuthService) {
 
   }
 
@@ -27,16 +31,9 @@ export class EventsComponent implements OnInit {
       this.events = data;
     })
   }
-  onSubmit() {
-    if (this.event.name != '' && this.event.place != '' && this.event.date!= null) {
-      this.eventService.addEvent(this.event);
-      this.event.name = '';
-      this.event.date = new Date();
-      this.event.place = '';
-    }
-  }
-  deleteEvent(e, event) {
-    this.eventService.deleteEvent(this.event);
+
+  deleteEvent(event, evnt) {
+    this.eventService.deleteEvent(evnt);
   }
 }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FacultyService} from '../services/faculty.service';
 import {Post} from '../models/faculty';
+import {AuthService} from '../services/auth.service';
 
 @Component({
   selector: 'app-faculty',
@@ -13,11 +14,13 @@ posts: Post[];
 post: Post = {
   name: '',
   teaches: '',
-  url: ''
+  url: '',
+  desc: ''
 }
 
 
-  constructor(public facultyService: FacultyService) {
+  constructor(public facultyService: FacultyService,
+  public aS: AuthService) {
 
    }
 
@@ -26,14 +29,7 @@ post: Post = {
       this.posts=data;
     })
   }
-  onSubmit(){
-    if(this.post.name!='' && this.post.teaches!='' && this.post.url!=''){
-      this.facultyService.addPost(this.post);
-      this.post.name='';
-      this.post.teaches='';
-      this.post.url='';
-    }
-  }
+
   deletePost(event,post){
     this.facultyService.deletePost(post);
   }

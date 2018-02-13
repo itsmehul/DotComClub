@@ -30,6 +30,7 @@ export class EventsService {
     this.eventsCol.add(event);
    }
    deleteEvent(event:Event){
+     console.log(event);
      this.eventDoc=this.afs.doc(`events/${event.id}`);
      this.eventDoc.delete();
    }

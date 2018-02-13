@@ -1,6 +1,64 @@
-<form (ngSubmit)="onSubmit()">
-  <input type="text" placeholder="Name" [(ngModel)]="post.name" name="name">
-  <input type="text" placeholder="Teaches" [(ngModel)]="post.teaches" name="teaches">
-  <input type="text" placeholder="Image(url)" [(ngModel)]="post.url" name="url">
-  <button value="Submit">Add teacher</button>
-</form>
+<div class="grid">
+  <mat-card class="tall-panel">
+    <h2>Add teacher</h2>
+    <form (ngSubmit)="addPost()">
+      <mat-form-field>
+        <input matInput type="text" placeholder="Name" [(ngModel)]="post.name" name="name" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" placeholder="Teaches" [(ngModel)]="post.teaches" name="teaches" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" placeholder="Image(url)" [(ngModel)]="post.url" name="url" required>
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput name="desc" placeholder="Description" [(ngModel)]="post.desc" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="5"></textarea>
+      </mat-form-field>
+      <button mat-raised-button value="Submit" color="primary">Add</button>
+    </form>
+  </mat-card>
+  <mat-card>
+    <h2>Add image</h2>
+    <form (ngSubmit)="addImg()">
+      <mat-form-field>
+        <input matInput type="text" placeholder="Name" [(ngModel)]="img.name" name="name" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" placeholder="Image(url)" [(ngModel)]="img.url" name="url" required>
+      </mat-form-field>
+      <button mat-raised-button value="Submit" color="primary">Add</button>
+    </form>
+  </mat-card>
+  <mat-card class="medium-panel">
+    <h2>Add Event</h2>
+    <form (ngSubmit)="addEvent()">
+      <mat-form-field>
+        <input matInput type="text" placeholder="Name" [(ngModel)]="event.name" name="name" required>
+      </mat-form-field>
+      <mat-form-field>
+
+        <input matInput [matDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="event.date" name="date">
+
+
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+
+
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" placeholder="Place" [(ngModel)]="event.place" name="place" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" placeholder="Image(url)" [(ngModel)]="event.url" name="url" required>
+      </mat-form-field>
+      <mat-form-field>
+        <textarea matInput name="desc" placeholder="Description" [(ngModel)]="event.desc" matTextareaAutosize matAutosizeMinRows="2" matAutosizeMaxRows="5"></textarea>
+      </mat-form-field>
+      <button mat-raised-button value="Submit" color="primary">Add</button>
+    </form>
+  </mat-card>
+  <form action="getFile($event)">
+    <input type="file" name="pic" accept="image/*">
+    <input type="submit">
+  </form>
+</div>

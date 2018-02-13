@@ -1,5 +1,6 @@
 <div class="grid">
   <div class="photo" *ngFor="let img of imgs">
+    <button mat-raised-button color="warn" *ngIf="this.aS.authState" mat-button (click)="deleteimg($event,img)" style="margin-bottom: 1em">Delete Item</button>
     <img src="{{img.data.url}}">
   </div>
 </div>

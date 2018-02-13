@@ -1,20 +1,18 @@
 <div class="grid">
-  
-  <mat-accordion *ngFor="let event of events">
-      <mat-expansion-panel (opened)="panelOpenState = true"
-                           (closed)="panelOpenState = false">
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-              {{event.data.name}}
-          </mat-panel-title>
-          <mat-panel-description>
-            {{panelOpenState ? 'close' : 'more info'}}
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <p></p>
-        <p>{{event.data.date | date:"MM/dd/yy"}} </p>
-        <p>{{event.data.place}}</p>
-        <button mat-button (click)="deletePost($e,event)">Delete Item</button>
-      </mat-expansion-panel>
-    </mat-accordion>
+  <mat-card class="example-card" *ngFor="let evnt of events">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{evnt.data.name}}</mat-card-title>
+      <mat-card-subtitle>{{evnt.data.date | date:"MM/dd/yy"}}@{{evnt.data.place}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{evnt.data.url}}">
+    <mat-card-content>
+      <p>
+        {{evnt.data.desc}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="warn" *ngIf="this.aS.authState" mat-button (click)="deleteEvent($event,evnt)" >Delete Item</button>
+    </mat-card-actions>
+  </mat-card>
 </div>

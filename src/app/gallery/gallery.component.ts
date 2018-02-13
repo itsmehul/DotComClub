@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {GalleryService} from '../services/gallery.service';
 import {Img} from '../models/gallery';
+import {AuthService} from '../services/auth.service';
 
 
 
@@ -16,7 +17,8 @@ export class GalleryComponent implements OnInit {
     url: ''
   }
 
-  constructor(public galleryService: GalleryService) { }
+  constructor(public galleryService: GalleryService,
+  public aS: AuthService) { }
 
   ngOnInit() {
     this.galleryService.getImgs().subscribe(data=>{
@@ -25,13 +27,7 @@ export class GalleryComponent implements OnInit {
     })
 
   }
-  onSubmit(){
-    if(this.img.name!='' && this.img.url!=''){
-      this.galleryService.addImg(this.img);
-      this.img.name='';
-      this.img.url='';
-    }
-  }
+
   deleteimg(event,img){
     this.galleryService.deleteImg(img);
   }

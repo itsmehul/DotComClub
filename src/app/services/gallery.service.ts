@@ -29,7 +29,7 @@ export class GalleryService {
     this.imgCol.add(img);
   }
   deleteImg(img: Img){
-    console.log(img.id);
+    console.log(img);
     this.imgDoc = this.afs.doc(`gallery/${img.id}`);
     this.imgDoc.delete();
   }

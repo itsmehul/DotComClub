@@ -3,4 +3,5 @@ export interface Post {
     name: string;
     teaches: string;
     url: string;
+    desc: string;
 }
