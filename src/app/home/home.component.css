@@ -1,6 +1,6 @@
 .grid {
   margin: 0;
-  padding: 6em 6em;
+  padding-top: 6em !important;
   background-color: rgba(199, 197, 197, 0.37);
   height: 100%;
   display: grid;
@@ -15,7 +15,7 @@ h1 {
 }
 
 mat-card {
-  width: 500px;
+  width: 60vw;
   justify-self: center;
   background-color: rgba(218, 218, 0, 0.541);
 }

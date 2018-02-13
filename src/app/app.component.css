@@ -123,7 +123,6 @@ router-outlet {
 .smenu {
     display: none;
 }
-
 #logout {
     display: flex;
     margin-top: 5px !important;
